@@ -1,10 +1,10 @@
 // ── Menu Data ──
 const MENU_ITEMS = [
-  { id: 1, name: 'Cappuccino',   price: 45, large: 70, img: 'assets/cappuccino.jpg', desc: 'Espresso with steamed milk and creamy foam' },
-  { id: 2, name: 'Flat White',   price: 45, large: 70, img: 'assets/flat-white.jpg', desc: 'Smooth espresso with velvety microfoam' },
-  { id: 3, name: 'Cold Brew',    price: 45, large: 70, img: 'assets/cold-brew.jpg', desc: 'Smooth cold-brewed coffee concentrate' },
-  { id: 4, name: 'Pour Over',    price: 45, large: 70, img: 'assets/pour-over.jpg', desc: 'Hand-poured precision coffee' },
-  { id: 5, name: 'Café Mocha',   price: 45, large: 70, img: 'assets/cafe-mocha.jpg', desc: 'Espresso, steamed milk, and rich chocolate' },
+  { id: 1, name: 'Cappuccino',   price: 45, large: 70, img: 'assets/Cappucino.png', desc: 'Espresso with steamed milk and creamy foam' },
+  { id: 2, name: 'Flat White',   price: 45, large: 70, img: 'assets/Flat white.png', desc: 'Smooth espresso with velvety microfoam' },
+  { id: 3, name: 'Cold Brew',    price: 45, large: 70, img: 'assets/Cold Brew.jpg', desc: 'Smooth cold-brewed coffee concentrate' },
+  { id: 4, name: 'Pour Over',    price: 45, large: 70, img: 'assets/Pour over coffee.jpg', desc: 'Hand-poured precision coffee' },
+  { id: 5, name: 'Café Mocha',   price: 45, large: 70, img: 'assets/Cafe Mocha.png', desc: 'Espresso, steamed milk, and rich chocolate' },
 ];
 
 let cart = [];
