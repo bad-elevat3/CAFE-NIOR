@@ -1,43 +1,39 @@
-// Merged and unified cart system
+// Unified Cart System Code
 
-class Cart {
-    constructor() {
-        this.items = [];
+// Function to add an item to the cart
+function addToCart(item) {
+    if (!this.cart) {
+        this.cart = [];
     }
+    this.cart.push(item);
+    console.log(`${item.name} added to cart.`);
+}
 
-    addItem(item) {
-        const existingItem = this.items.find(i => i.id === item.id);
-        if (existingItem) {
-            existingItem.quantity += item.quantity;
-        } else {
-            this.items.push(item);
-        }
-    }
-
-    removeItem(itemId) {
-        this.items = this.items.filter(item => item.id !== itemId);
-    }
-
-    clearCart() {
-        this.items = [];
-    }
-
-    getTotal() {
-        return this.items.reduce((total, item) => total + (item.price * item.quantity), 0);
-    }
-
-    checkout() {
-        // Placeholder for checkout logic
-    }
-
-    listItems() {
-        return this.items;
+// Function to remove an item from the cart
+function removeFromCart(item) {
+    const index = this.cart.indexOf(item);
+    if (index > -1) {
+        this.cart.splice(index, 1);
+        console.log(`${item.name} removed from cart.`);
+    } else {
+        console.log(`${item.name} not found in cart.`);
     }
 }
 
-// Example usage
-const cart = new Cart();
-cart.addItem({ id: 1, name: 'Product 1', price: 10.00, quantity: 1 });
-cart.addItem({ id: 2, name: 'Product 2', price: 15.00, quantity: 1 });
-console.log(cart.listItems());
-console.log('Total:', cart.getTotal());
+// Function to display cart items
+function displayCart() {
+    if (this.cart && this.cart.length > 0) {
+        console.log("Items in your cart:");
+        this.cart.forEach(item => {
+            console.log(`- ${item.name}`);
+        });
+    } else {
+        console.log("Your cart is empty.");
+    }
+}
+
+// Function to calculate total price
+function calculateTotal() {
+    if (!this.cart || this.cart.length === 0) return 0;
+    return this.cart.reduce((total, item) => total + item.price, 0);
+}
