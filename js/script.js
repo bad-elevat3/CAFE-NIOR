@@ -16,6 +16,18 @@ function goTo(screenId) {
   const target = document.getElementById(screenId);
   if (target) target.classList.add('active');
   if (screenId === 'screen-cart') renderCart();
+
+  // Highlight active link in desktop header
+  document.querySelectorAll('.desktop-nav-link').forEach(link => {
+    link.classList.remove('active');
+    const clickHandler = link.getAttribute('onclick') || '';
+    if (clickHandler.includes(screenId)) {
+      link.classList.add('active');
+    }
+  });
+
+  // Reset scroll position
+  window.scrollTo(0, 0);
 }
 
 // ── Show product screen with correct item data ──
@@ -165,7 +177,7 @@ function updateCartTotals() {
 // ── Update cart badge on all nav bars ──
 function updateBadges() {
   const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
-  ['cart-badge-home', 'cart-badge-login', 'cart-badge-menu', 'cart-badge-cart'].forEach(id => {
+  ['cart-badge-home', 'cart-badge-login', 'cart-badge-menu', 'cart-badge-cart', 'cart-badge-desktop'].forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
     if (totalQty > 0) {

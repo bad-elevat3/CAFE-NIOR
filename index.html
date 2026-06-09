@@ -9,7 +9,26 @@
 </head>
 <body>
 
-<div class="phone">
+<div class="app-container">
+
+  <!-- ====== DESKTOP HEADER ====== -->
+  <header class="desktop-header" role="banner">
+    <div class="header-logo" onclick="goTo('screen-home')" role="button" tabindex="0" aria-label="Café Nior Home">
+      <h1>Café Nior</h1>
+    </div>
+    <nav class="desktop-nav" role="navigation" aria-label="Main navigation">
+      <a href="#" class="desktop-nav-link active" onclick="goTo('screen-home'); return false;">Home</a>
+      <a href="#" class="desktop-nav-link" onclick="goTo('screen-menu'); return false;">Menu</a>
+      <a href="#" class="desktop-nav-link" onclick="goTo('screen-cart'); return false;">Cart</a>
+      <a href="#" class="desktop-nav-link" onclick="goTo('screen-login'); return false;">Sign In</a>
+    </nav>
+    <div class="header-actions">
+      <div class="desktop-cart-icon-wrap" onclick="goTo('screen-cart')" role="button" tabindex="0" aria-label="View Cart">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>
+        <span class="desktop-cart-badge" id="cart-badge-desktop"></span>
+      </div>
+    </div>
+  </header>
 
   <!-- ====== SCREEN 1: HOME ====== -->
   <div class="screen active" id="screen-home">
@@ -333,7 +352,7 @@
     </div>
   </div>
 
-</div><!-- end .phone -->
+</div><!-- end .app-container -->
 
 <script src="js/script.js"></script>
 </body>
